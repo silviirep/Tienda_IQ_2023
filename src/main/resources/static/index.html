@@ -1,26 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang = "es">
     <head>
         <title>Tienda en Línea</title>
         <meta charset="UTF-8">
+        <meta name="description" content="Página de la lección 2" />
+        <meta name="keywords" content="html5, css, web, fidelitas" />
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div style ="color: red;">
-            <h1 style = "color: green; text-align: center;">Home</h1>
-            <p>Bienvenidos a la página de la tienda en línea...</p>
-        </div>
+        <!-- Esta etiqueta indica al navegador que es un encabezado -->
+        <header class="header">
+            <nav class="nav"><a href="index.html" class="logo nav-link">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo9.html">&LeftTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo2.html">&RightTriangleBar;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iFrames.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formularios.html">formularios</a></li>
+                </ul>
+            </nav>
+        </header>
         
+        <aside id="barraLateral">
+            <h2>Productos mas vendidos</h2>
+            <p>Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
+        </aside>
         
-        <p >Lorem ipsum dolor sit amet consectetur adipiscing, elit quam facilisi litora purus pharetra fusce, facilisis ullamcorper nascetur lectus rutrum. Sem lacus egestas mus vel penatibus nec torquent, accumsan fames pretium urna turpis malesuada nam aenean, auctor venenatis aptent duis himenaeos orci. Risus ornare commodo est accumsan magna aliquam facilisis habitant pretium enim sapien pharetra auctor nisl, sodales molestie ligula aliquet justo eros urna dictum aptent montes maecenas turpis. Ultrices ullamcorper penatibus natoque aliquam congue cursus sed curabitur nostra sociis ac, mus ornare conubia fames vitae aptent arcu phasellus feugiat. Litora magnis quis risus sagittis blandit penatibus odio dapibus iaculis, arcu eu lacus metus aliquet cubilia duis senectus, felis consequat sociosqu nisl sollicitudin quisque ornare facilisi. Himenaeos placerat dictum aliquam faucibus sociis luctus in potenti interdum, netus enim parturient sapien turpis auctor cras fusce, imperdiet natoque posuere velit mattis libero bibendum viverra.</p>
-        <p>Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
-        <p>Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
-        <p>Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
-        
-        <br/>
-        <br/>
-        <br/>
-        
-        <p>Última línea</p>
+        <section id="contenido">
+            <h2>Articulos Principales</h2>
+            <article>
+                <header>Asus Vivobook</header>
+                <p class="description"><cite>Lorem ipsum was conceived </cite>as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
+                <figure>
+                    <img src="imagenes/corazones.jpg" alt="Asus Vivobook" width="200" />
+                    <figcaption>Imagen con fines ilustrativos</figcaption>
+                </figure>
+                
+            </article>
+            <article>
+                <header>Alienware ATD 900</header>
+                <p class="description"><cite>Lorem ipsum was conceived </cite>as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
+                <figure>
+                    <img src="imagenes/girasoles.jpg" alt="Alienware ATD 900" width="200" />
+                    <figcaption>Mas vendido</figcaption>
+                </figure>
+                
+            </article>
+            <article>
+                <header>Impresora 3D</header>
+                <p class="description"><cite>Lorem ipsum was conceived </cite>as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. Using Lorem Ipsum allows designers to put together layouts and the form of the content before the content has been created, giving the design and production process more freedom.</p>
+                <figure>
+                    <img src="imagenes/bosque.jpg" alt="Impresora 3D" width="200" />
+                    <figcaption>Mas Economico</figcaption>
+                </figure>
+                
+            </article>
+            </br>
+            </br>
+            <article>
+                <h2>Lineas de producto</h2>
+                <table border="0">
+                    <thead id="encabezadoTabla">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Teclados</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Monitores</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Portatiles</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Perifericos</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Baterias</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Headsets</td>
+                        </tr>
+                    </tbody>  
+                </table>
+            </article> 
+        </section>
+        <footer id="piePagina">
+            Drechos reservados Copy; 2023 <address class="lineaDireccion">San Jose, Santa Ana</address><address class="lineaDireccion">Tel: 72546348</address>
+        </footer>
         
     </body>
 </html>
