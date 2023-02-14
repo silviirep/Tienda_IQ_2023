@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Data //nos permite crear los set y get de forma dinamica
+@Data
 @Entity
 @Table("cliente")
 public class cliente {
@@ -18,7 +18,7 @@ public class cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente;
-    String nombre;
+    String name;
     String apellido;
     String correo;
     String telefono;
@@ -27,10 +27,14 @@ public class cliente {
     public cliente(){
     }
 
-    public cliente(String nombre, String apellido, String correo, String telefono) {
-        this.nombre = nombre;
+    public cliente(String name, String apellido, String correo, String telefono) {
+        this.name = name;
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
-    } 
+    }
+    
+    
+    
+    
 }
