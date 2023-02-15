@@ -10,14 +10,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table("cliente")
+@Table(name="cliente")
 public class cliente {
     
     private  static final long serialVersionUID =1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long idCliente; //transforma en id_cliente
     String name;
     String apellido;
     String correo;
