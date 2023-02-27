@@ -43,8 +43,10 @@ public class indexController {
         
         //List<cliente> clientes = Arrays.asList(cliente, cliente2); //var es cuando no se sabe el tipo de variable que es 
         var clientes= clienteService.getClientes();
-        //List<cliente> clientes = Arrays.asList();
+       //var clientes = Arrays.asList();
             model.addAttribute("clientes", clientes);
+            
+            
         
         return "index"; //todas las vistas que vamos a retornar están en templates
     }
@@ -57,7 +59,7 @@ public class indexController {
     @PostMapping("/guardarCliente")
     public String guardarCliente(cliente cliente){
         clienteService.save(cliente);
-        return "redirect:/";  //un redirect no llama una vista si no que retorna un metodo
+        return "redirect:/";  //un redirect no llama una vista si no que llamada al metodo del MVC
         
     }
     

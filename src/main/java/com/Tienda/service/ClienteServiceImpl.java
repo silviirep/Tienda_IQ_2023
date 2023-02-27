@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Service// es el que se encarga de reconocer los metodos, sin saltos de linea
 public class ClienteServiceImpl implements ClienteService{
 
     @Autowired
@@ -28,9 +28,9 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    @Transactional 
+    @Transactional //los de modificacion solo se usa transactional
     public void save(cliente cliente) {
-        clienteDao.save(cliente);
+        clienteDao.save(cliente); // con un save puedo modificar tambien
     }
 
     @Override

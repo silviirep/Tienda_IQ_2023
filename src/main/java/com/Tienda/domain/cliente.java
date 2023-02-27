@@ -18,18 +18,20 @@ public class cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente; //transforma en id_cliente
-    String name;
-    String apellido;
+
+    String nombre;
+    String apellidos;
     String correo;
     String telefono;
+
     
     
     public cliente(){
     }
 
-    public cliente(String name, String apellido, String correo, String telefono) {
-        this.name = name;
-        this.apellido = apellido;
+    public cliente(String nombre, String apellidos, String correo, String telefono) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
         this.correo = correo;
         this.telefono = telefono;
     }
