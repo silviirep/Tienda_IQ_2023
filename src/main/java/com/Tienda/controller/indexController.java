@@ -51,29 +51,4 @@ public class indexController {
         return "index"; //todas las vistas que vamos a retornar están en templates
     }
     
-    @GetMapping("/nuevoCliente")
-    public String nuevoCliente(cliente cliente){
-        return "modificarCliente";
-    }
-    
-    @PostMapping("/guardarCliente")
-    public String guardarCliente(cliente cliente){
-        clienteService.save(cliente);
-        return "redirect:/";  //un redirect no llama una vista si no que llamada al metodo del MVC
-        
-    }
-    
-    @GetMapping("/modificarCliente/{idCliente}")
-    public String modificarCliente(cliente cliente, Model model){
-        cliente= clienteService.getCliente(cliente);
-        model.addAttribute("cliente", cliente);
-        return "modificarCliente";
-    }
-    
-    @GetMapping("/eliminarCliente/{idCliente}")
-    public String eliminarCliente(cliente cliente){
-        clienteService.delete(cliente);
-        return "redirect:/";
-    }
-    
 }

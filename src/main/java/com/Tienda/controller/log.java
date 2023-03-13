@@ -9,5 +9,9 @@ package com.Tienda.controller;
  * @author Silvinha
  */
 class log {
+
+    static void info(String ahora_utilizando_MVC) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

@@ -6,12 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.io.Serializable;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name="cliente")
-public class cliente {
+public class cliente implements Serializable{
     
     private  static final long serialVersionUID =1L;
     
@@ -23,9 +24,10 @@ public class cliente {
     String apellidos;
     String correo;
     String telefono;
-
     
-    
+    @JoinColumn(name="id_credito", referencedColumnName="id_credito")
+    @ManyToOne
+    private Credito credito;
     public cliente(){
     }
 
@@ -35,8 +37,4 @@ public class cliente {
         this.correo = correo;
         this.telefono = telefono;
     }
-    
-    
-    
-    
 }

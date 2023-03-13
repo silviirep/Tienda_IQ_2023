@@ -1,7 +1,9 @@
 
 package com.Tienda.service;
 
+import com.Tienda.dao.CreditoDao;
 import com.Tienda.dao.clienteDao;
+import com.Tienda.domain.Credito;
 import com.Tienda.domain.cliente;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,9 @@ public class ClienteServiceImpl implements ClienteService{
 
     @Autowired
     clienteDao clienteDao;
+    
+     @Autowired
+    CreditoDao creditoDao;
     
     
     @Override
@@ -29,7 +34,10 @@ public class ClienteServiceImpl implements ClienteService{
 
     @Override
     @Transactional //los de modificacion solo se usa transactional
-    public void save(cliente cliente) {
+    public void save(cliente cliente) { //cliente tiene su idCliente= 0 y credito tiene idCredito que va a tener un limite, para setear el credito debe primero salvarlo y pueda realizar el cambio
+        Credito credito = cliente.getCredito();
+        credito = creditoDao.save(credito);
+        cliente.setCredito(credito);
         clienteDao.save(cliente); // con un save puedo modificar tambien
     }
 

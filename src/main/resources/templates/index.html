@@ -3,6 +3,9 @@
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+
+
     </head>
     <body>
         <!--        <div>Saludos</div>
@@ -15,8 +18,8 @@
                 <p>Nombre:<span th:text"${cliente.nombre}"></span></p>
                 <p>Nombre:<span th:text"${cliente.nombre}"></span></p>
                 <p>Nombre:<span th:text"${cliente.nombre}"></span></p>-->
-        <header th:replace="layout/plantilla :: header"></header>
-        <h2>Clientes</h2>
+        <header th:replace="layout/plantilla :: header"/>
+        <h2>Nuestros Articulos</h2>
         <a th:href="@{/nuevoCliente}">Nuevo Cliente</a>
         <br/>
         <!--        <br/>  para evaluacion de atributo en el model, usamos el simbolo de $ y para rutas se usa @ y abro {}-->
