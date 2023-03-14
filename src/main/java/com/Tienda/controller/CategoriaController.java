@@ -21,8 +21,7 @@ public class CategoriaController {
     CategoriaService categoriaService;
     
     @GetMapping("/categoria/listado") //detallaremos que tipo de mapping es cada uno, dentro de parentesis vendra el recurso que solicitamos
-    public String inicio(Model model) {
-        log.info("Ahora utilizando MVC"); //Loguear informacion o pistas de donde va el programa, pero se puede crear bitacoras
+    public String inicio(Model model) { //Loguear informacion o pistas de donde va el programa, pero se puede crear bitacoras
         //en BD 
 //        String fecha = new Date().toString();
 //        String mensaje="Estamos en semana 4, Saludos";

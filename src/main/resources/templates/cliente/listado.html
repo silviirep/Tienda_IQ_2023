@@ -10,7 +10,7 @@
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
             <h2>Listado de Clientes</h2>
-            <a th:href="@{/nuevoCliente}">Nuevo Cliente</a>
+            <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
             <br/>
             <!--        <br/>  para evaluacion de atributo en el model, usamos el simbolo de $ y para rutas se usa @ y abro {}-->
             <div th:if="${clientes != null and !clientes.empty}">
@@ -22,7 +22,6 @@
                     <th>Correo</th>
                     <th>Telefono</th>
                     <th>Limite</th>
-                    
                     <th colspan="2">Acciones</th>
                     </thead>
                     <tbody>
@@ -32,13 +31,11 @@
                             <td th:text="${cliente.correo}"></td>
                             <td th:text="${cliente.telefono}"></td>
                             <td th:text="${#numbers.formatDecimal(cliente.credito.limite, 3, 2)}"></td>
-                            <td><a th:href="@{/modificarCliente/} + ${cliente.idCliente}">Modificar</a></td>
-                            <td><a th:href="@{/eliminarCliente/} + ${cliente.idCliente}">Eliminar</a></td>
+                            <td><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}">Modificar</a></td>
+                            <td><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}">Eliminar</a></td>
                         </tr>
                     </tbody>
                 </table>
-
-
             </div>
             <footer th:replace="layout/plantilla :: footer" />
     </body>

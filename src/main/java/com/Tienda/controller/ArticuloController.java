@@ -25,7 +25,6 @@ public class ArticuloController {
     
     @GetMapping("/articulo/listado")
     public String inicio(Model model) {
-        log.info("Ahora utilizando MVC"); 
         var articulos= articuloService.getArticulos(false);
        //var clientes = Arrays.asList();
             model.addAttribute("articulos", articulos);

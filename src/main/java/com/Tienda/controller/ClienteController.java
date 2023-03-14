@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 /**
  *
@@ -19,9 +19,9 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
     
+    
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
-        log.info("Ahora utilizando MVC"); 
         var clientes= clienteService.getClientes();
        //var clientes = Arrays.asList();
             model.addAttribute("clientes", clientes);
