@@ -13,8 +13,15 @@
             <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
             <br/>
             <!--        <br/>  para evaluacion de atributo en el model, usamos el simbolo de $ y para rutas se usa @ y abro {}-->
-            <div th:if="${clientes != null and !clientes.empty}">
+            <form th:action="@{/cliente/consulta}" method="get" th:object="${cliente}">
+                <label for="apellidos">Apellidos </label><br/>
+                
+                <input type="text" name="apellidos" th:value="${apellidos}"><br/>
 
+                <input type="submit" value="Buscar" />
+            </form>
+
+            <div th:if="${clientes != null and !clientes.empty}">
                 <table border="1">
                     <thead>   
                     <th>Nombre</th>
@@ -37,5 +44,7 @@
                     </tbody>
                 </table>
             </div>
-            <footer th:replace="layout/plantilla :: footer" />
+        </div>
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
+</html>

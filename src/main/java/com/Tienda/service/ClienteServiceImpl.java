@@ -1,4 +1,3 @@
-
 package com.Tienda.service;
 
 import com.Tienda.dao.CreditoDao;
@@ -10,24 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ *
+ * @author Silvinha
+ */
 @Service// es el que se encarga de reconocer los metodos, sin saltos de linea
-public class ClienteServiceImpl implements ClienteService{
+public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
     clienteDao clienteDao;
-    
-     @Autowired
+
+    @Autowired
     CreditoDao creditoDao;
-    
-    
+
     @Override
-    @Transactional(readOnly=true) //para manejar trasacciones de solo lectura
+    @Transactional(readOnly = true) //para manejar trasacciones de solo lectura
     public List<cliente> getClientes() {
-        return (List<cliente>)clienteDao.findAll();
+        return (List<cliente>) clienteDao.findAll();
     }
 
     @Override
-    @Transactional(readOnly=true) //para manejar trasacciones de solo lectura
+    @Transactional(readOnly = true) //para manejar trasacciones de solo lectura
     public cliente getCliente(cliente cliente) {
         return clienteDao.findById(cliente.getIdCliente()).orElse(null);
     }
@@ -42,11 +44,14 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    @Transactional  
+    @Transactional
     public void delete(cliente cliente) {
         clienteDao.deleteById(cliente.getIdCliente());
     }
     
-    
-    
+    @Override
+    public List<cliente> consulta(String apellidos) {
+        return (List<cliente>) clienteDao.findByApellidos(apellidos);
+    }
+
 }
