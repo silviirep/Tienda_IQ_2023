@@ -24,14 +24,34 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
+//    @GetMapping("/cliente/listado")
+//    public String inicio(Model model) {
+//        var clientes = clienteService.getClientes();
+//        
+//        var limiteTotal =0;
+//        for(var c: clientes){
+//            limiteTotal 
+//        }
+//        //var clientes= clienteService.getClienteApellidos("Mena Loria");
+//        //var clientes = Arrays.asList();
+//        model.addAttribute("clientes", clientes);
+//
+//        return "/cliente/listado"; //todas las vistas que vamos a retornar están en templates
+//    }
+    
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
-        var clientes = clienteService.getClientes();
-        //var clientes= clienteService.getClienteApellidos("Mena Loria");
-        //var clientes = Arrays.asList();
-        model.addAttribute("clientes", clientes);
-
-        return "/cliente/listado"; //todas las vistas que vamos a retornar están en templates
+        var clientes=clienteService.getClientes();
+        
+        var limiteTotal=0;
+        for (var c: clientes) {
+            limiteTotal+=c.getCredito().getLimite();
+        }
+        model.addAttribute("limiteTotal",limiteTotal);
+        model.addAttribute("totalClientes",clientes.size()); 
+        
+        model.addAttribute("clientes",clientes); 
+        return "/cliente/listado";
     }
 
     @GetMapping("/cliente/nuevo")

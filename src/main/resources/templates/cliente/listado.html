@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns: th="http://www.thymeleaf.org"
+      xmlns: sec="http://thymeleaft.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
+        
+        <section th:replace="cliente/fragmentosCliente :: botonesAgregar"></section>
+        <section th:replace="cliente/fragmentosCliente :: agregarCliente"></section>
+        <section th:replace="cliente/fragmentosCliente :: listadoClientes"></section>
+<!--        <div class="contenido">
             <h2 th:text="#{cliente.titulo}">Listado de Clientes</h2>
             <a th:href="@{/cliente/nuevo}" th:text="#{cliente.nuevo}">Nuevo Cliente</a>
-            <!--
+            
             <br/>
                     <br/>  para evaluacion de atributo en el model, usamos el simbolo de $ y para rutas se usa @ y abro {}
             <form th:action="@{/cliente/consulta}" method="get" th:object="${cliente}">
@@ -20,7 +23,7 @@
                 <input type="text" name="apellidos" th:value="${apellidos}"><br/>
 
                 <input type="submit" value="Buscar" />
-            </form>-->
+            </form>
             <div th:if="${clientes != null and !clientes.empty}">
                 <table border="1">
                     <thead>  
@@ -50,7 +53,7 @@
             <div th:if="${clientes == null or clientes.empty}">
                 <p th:text="#{cliente.no_mostrar}">No tenemos clientes que mostrar...</p>
             </div>
-        </div>
+        </div>-->
         <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>

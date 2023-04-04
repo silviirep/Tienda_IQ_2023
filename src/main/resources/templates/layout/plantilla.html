@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns: th="http:www.thymeleaf.org"
+      xmlns: th="http://www.thymeleaf.org"
       xmlns: sec="http://thymeleaft.org/extras/spring-security">
-    <head th:fragment="head">
+    
+    <head th: replace="layout/plantilla :: head">
         <title>TechShop</title>
         <meta charset="UTF-8">
             <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrao.min.css}"/>
@@ -44,6 +45,12 @@
                                     <i class="fas fa-user"></i>
                                     <span th:text="#{plantilla.bienvenido}">Bienvenido: </span>
                                     <span sec:authentication="name">Usuario</span>
+                                </a>
+                            </li>
+                            <li class="nav-item mr-3">
+                                <a href="#" class="nav-link"></i>
+                                    <span th:text="#{plantilla.troles}">Roles: </span>
+                                    <span sec:authentication="principal.authorities">XXX</span>
                                 </a>
                             </li>
                             <li class="nav-item">
