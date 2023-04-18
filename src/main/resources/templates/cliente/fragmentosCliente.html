@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns: th="http://www.thymeleaf.org"
-      xmlns: sec="http://thymeleaft.org/extras/spring-security">
-    <head th:replace="layout/plantilla :: head">
-        <title>TechShop</title>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <section th: fragment="botonesAgregar" class="py-4 mb-4 bg-light">
+        <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">   
                         <button 
-                            type="button"
-                            class="btn btn-primary btn-block"
-                            data-bs-toggle="modal"
+                            type="button" 
+                            class="btn btn-primary btn-block" 
+                            data-bs-toggle="modal" 
                             data-bs-target="#agregarCliente">
                             <i class="fas fa-plus"></i> [[#{accion.agregar}]]
                         </button>
@@ -29,13 +30,13 @@
                             <div class="card-header">
                                 <h4>[[#{cliente.titulo}]]</h4>
                             </div>
-                            <div th: if="${clientes !=null and !clientes.empty}">
+                            <div th:if="${clientes != null and !clientes.empty}">
                                 <table class="table table-stryped">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>#</th>
                                             <th th:text="#{cliente.nombre}">Nombre</th>
-                                            <th th:text="#{cliente.limite}">Limite</th>
+                                            <th th:text="#{cliente.limite}">Límite</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -43,7 +44,7 @@
                                     <tbody>
                                         <tr th:each="cliente, contador : ${clientes}">
                                             <td>[[${contador.count}]]</td>
-                                            <td>[[${cliente.nombre} + '' + ${cliente.apellidos}]]</td>
+                                            <td>[[${cliente.nombre} + ' ' + ${cliente.apellidos}]]</td>
                                             <td class="text-end">[[${new java.text.DecimalFormat('$#,##0.00').format(cliente.credito.limite)}]]</td>
                                             <td>
                                                 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/cliente/eliminar/}+${cliente.idCliente}"

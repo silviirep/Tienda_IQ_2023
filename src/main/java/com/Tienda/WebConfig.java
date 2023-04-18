@@ -12,7 +12,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-public class WebConfig implements WebMvcConfigurer{
+public class WebConfig implements WebMvcConfigurer {
     
     @Bean
     public SessionLocaleResolver localeResolver(){
@@ -37,8 +37,9 @@ public class WebConfig implements WebMvcConfigurer{
     @Override
     public void addViewControllers(ViewControllerRegistry registro){
         registro.addViewController("/").setViewName("index");
-        registro.addViewController("/login");
+        registro.addViewController("login");
         registro.addViewController("/errores/403").setViewName("/errores/403");
+        
     }
     
 }

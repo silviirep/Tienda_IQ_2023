@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns: th="http://www.thymeleaf.org"
+      xmlns: th="http:www.thymeleaf.org"
       xmlns: sec="http://thymeleaft.org/extras/spring-security">
-    
-    <head th: replace="layout/plantilla :: head">
+    <head th:fragment="head">
         <title>TechShop</title>
         <meta charset="UTF-8">
             <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrao.min.css}"/>
@@ -48,9 +47,9 @@
                                 </a>
                             </li>
                             <li class="nav-item mr-3">
-                                <a href="#" class="nav-link"></i>
+                                <a href="#" class="nav-link">
                                     <span th:text="#{plantilla.troles}">Roles: </span>
-                                    <span sec:authentication="principal.authorities">XXX</span>
+                                    <span sec:authentication="principal.authoritis">XXX</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -75,12 +74,12 @@
                 </div>
             </section>
         </header>
-        <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
+        <footer th:fragment="footer" class="position-fixed bottom-0 start-0 end-0 bg-info text-white mt-5 p-2">
             <div class="container">
                 <div class="col">
                     <p class="lead text-center">
-                        &COPY; [[#{plantilla.derechos}]]
-                        <a th:href="@{/(lang=es)}">ES</a>
+                        &COPY [[#{plantilla.derechos}]]
+                        <a th:href="@{/(lang=es)}">ES</a> | 
                         <a th:href="@{/(lang=en)}">EN</a>
                     </p>
                 </div>

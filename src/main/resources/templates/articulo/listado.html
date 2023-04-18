@@ -1,44 +1,42 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns: th="http://www.thymeleaf.org"
-      xmlns: sec="http://thymeleaft.org/extras/spring-security">
-<head th:replace="layout/plantilla :: head">
-    <title>TechShop</title>
-</head>
-<body>
-    <header th:replace="layout/plantilla :: header"/>
-    <div class="contenido">
-        <h2>Listado de Articulos</h2>
-        <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
-        <br/>
-        <!--        <br/>  para evaluacion de atributo en el model, usamos el simbolo de $ y para rutas se usa @ y abro {}-->
-        <div th:if="${articulos != null and !articulos.empty}">
+<<html xmlns:th="http://www.thymeleaf.org">
+     <head th:replace="layout/plantilla :: head">
+        <title>Listado Articulo</title>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="contenido">
+            <h2>Listado de Articulos</h2>
+            <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
+            <br/>
+            <!--        <br/>  para evaluacion de atributo en el model, usamos el simbolo de $ y para rutas se usa @ y abro {}-->
+            <div th:if="${articulos != null and !articulos.empty}">
 
-            <table border="1">
-                <thead>  
-                    <tr>
-                        <th>Descrcipcion</th>
-                        <th>Precio</th>
-                        <th>Existencias</th>
-                        <th>Activa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="articulo : ${articulos}">
-                        <td th:text="${articulo.descripcion}"></td> 
-                        <td th:text="${#numbers.formatDecimal(articulo.precio, 3, 2)}" style="text-align: right"></td>
-                        <td th:text="${articulo.existencias}" style="text-align: right"></td>
-                        <td><input type="checkbox" name="activa" th:checked="${articulo.activo}" disable="true"></td>                            
-                        <td><a th:href="@{/articulo/modificar/} + ${articulo.idArticulo}">Modificar</a></td>
-                        <td><a th:href="@{/articulo/eliminar/} + ${articulo.idArticulo}">Eliminar</a></td>
-                    </tr>
-                </tbody>
-            </table>
+                <table border="1">
+                    <thead>  
+                        <tr>
+                            <th>Descrcipcion</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
+                            <th>Activa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="articulo : ${articulos}">
+                            <td th:text="${articulo.descripcion}"></td> 
+                            <td th:text="${#numbers.formatDecimal(articulo.precio, 3, 2)}" style="text-align: right"></td>
+                            <td th:text="${articulo.existencias}" style="text-align: right"></td>
+                            <td><input type="checkbox" name="activa" th:checked="${articulo.activo}" disable="true"></td>                            
+                            <td><a th:href="@{/articulo/modificar/} + ${articulo.idArticulo}">Modificar</a></td>
+                            <td><a th:href="@{/articulo/eliminar/} + ${articulo.idArticulo}">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${articulos==null or articulos.empty}">
+                No tenemos articulos que mostrar...
+            </div>
         </div>
-        <div th:if="${articulos==null or articulos.empty}">
-            No tenemos articulos que mostrar...
-        </div>
-    </div>
-    <footer th:replace="layout/plantilla :: footer" />
-</body>
+        <footer th:replace="layout/plantilla :: footer" />
+    </body>
 </html>
